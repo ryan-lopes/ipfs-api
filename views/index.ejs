@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <h1>Upload file to IPFS</h1>
+    <form action="/upload"method="POST" enctype="multipart/form-data">
+        <label>Filename</label>
+        <input type="text" name="fileName">
+        <br><br>
+        <label>Upload file</label>
+        <input type="file" name="file">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
