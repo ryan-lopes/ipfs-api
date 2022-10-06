@@ -3,12 +3,12 @@ import fs from 'fs'
 
 // ipfs-core/ipfs-http-client
 
-const ipfs = create({ host: 'localhost', port: '5001', protocol: 'http' })
+const ipfs = create('/ip4/127.0.0.1/tcp/5001')
 
 const addFile = async (fileName, filePath) => {
   const file = fs.readFileSync(filePath);
   const fileAdded = await ipfs.add({ path: fileName, content: file });
-  const fileHash = fileAdded[0].cid;
+  const fileHash = fileAdded.cid;
   return fileHash;
 }
 
@@ -21,14 +21,14 @@ export default {
 
     file.mv(filePath, async (err) => {
 
-        if (err) {
-          console.log("An error ocurred");
-          return res.sendStatus(500);
-        }
+      if (err) {
+        console.log("An error ocurred");
+        return res.sendStatus(500);
+      }
 
-        const fileHash = await addFile(fileName, filePath)
-        
-        fs.unlink(filePath, (err) => {
+      const fileHash = await addFile(fileName, filePath)
+
+      fs.unlink(filePath, (err) => {
 
         if (err) {
           console.log(err);
