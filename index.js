@@ -1,16 +1,18 @@
-import express from 'express'
-import fileUpload from 'express-fileupload'
-import router from './routes.js'
-import bodyParser from 'body-parser'
+import { create } from 'ipfs-http-client';
 
-const app = express();
-app.set("view engine", "ejs");
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(fileUpload());
-router(app);
+const filePath = "./files/wall-e.jpg";
 
+const text = {
+  path: "wall-e.jpg",
+  content: "HImage"
+};
 
-app.listen(3000, () => {
-  console.log("Servidor inicializado");
-});
+async function main() {
+  const node = create('/ip4/127.0.0.1/tcp/5001')
+  console.log("Starting API");
+
+  const cid = await addText(node, file);
+  await get(node, cid);
+}
+
+main();
