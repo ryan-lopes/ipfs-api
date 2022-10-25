@@ -5,6 +5,6 @@ files
 *.tar
 axiosFiles.js
 output.tar.gz
-./dag.js
-./files.js
+dag.js
+text.js
 readme1.md
