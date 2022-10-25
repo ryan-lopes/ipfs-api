@@ -1,31 +1,25 @@
-import { create } from 'ipfs-http-client';
-import { addFile, getFile } from './files.js'
-import { addDag, getDag } from './dag.js'
+import * as IPFS from 'ipfs-http-client';
+import fileTest from './files.js';
 
-const filePath = "./files/wall-e.jpg";
-const fileName = "walle";
+const srcFile = {
+  path: "./files/sYQ4La0.jpg",
+  name: "Wall"
+};
+
+const destFile = {
+  path: "./files/",
+  name: "output_Wall"
+}
 
 const text = {
   path: "wall-e.jpg",
   content: "HImage"
 };
-
+ 
 async function main() {
-  const node = create('/ip4/127.0.0.1/tcp/5001')
+  const node = IPFS.create('/ip4/127.0.0.1/tcp/5001')
   //console.log("Starting API");
-  dagTest(node);
+  fileTest(node, srcFile, destFile);
 }
 
-async function dagTest(node) {
-  const { fileName: name, cid } = await addDag(node, fileName, filePath);
-  console.log(`Name: ${name} \n CID: ${cid}`);
-  //const value = await getDag(node, cid);
-  console.log(value);
-}
-async function fileTest(node) {
-  const { fileName: name, cid } = await addFile(node, fileName, filePath);
-  //console.log(`Name: ${name} \n CID: ${cid}`);
-  //const value = await getFile(node, cid, filePath);
-  console.log(value);
-}
 main();

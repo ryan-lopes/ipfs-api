@@ -38,3 +38,24 @@ Para comprimir arquivos no LInux, existem as funções:
 - gunzip: Descompacta 1 arquivo (gUnzip)
 
 ## Blob vs Buffer
+...
+
+## Links
+
+<https://research-protocol-ai.ipns.dweb.link/tutorials/resnetlab-on-tour/content-addressing/>
+
+<https://www.tabnine.com/code/javascript/functions/tar/extract>
+
+<https://github.com/koorchik/node-mystem3/blob/5418368fc8bc79e979a29e31acf3fc56d9838c82/bin/download-mystem.js#L76>
+
+<https://gist.github.com/gera2ld/560e7314dd9cdefd110bd019d8603353>
+
+## Tasks
+
+- [ ] Instalação de Sawtooth
+- [ ] Exemplo de Sawtooth
+
+...
+
+- [ ] Pesquisar as operações de CRUD no Sawtooth
+- [ ] Pesquisar sobre carteiras

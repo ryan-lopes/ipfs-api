@@ -1,2 +1,9 @@
 node_modules
 files
+*.txt
+*.jpg
+*.tar
+axiosFiles.js
+text.js
+output.tar.gz
+dag.js

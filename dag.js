@@ -1,11 +1,10 @@
 import fs from 'fs'
 
 export const addDag = async (node, fileName, filePath) => {
-  const file = fs.readFileSync(filePath);
+  //const file = fs.readFileSync(filePath);
   const obj = {
     type: ".jpg",
-    fileName,
-    file
+    fileName
   }
   const cid = await node.dag.put(obj, { storeCodec: 'dag-cbor', hashAlg: 'sha2-512' })
 
@@ -33,4 +32,11 @@ export const getDag = async (node, cid) => {
     buf,
   );
   return file;
+}
+
+export const main = async (node) => {
+  const { name, cid } = await addDag(node, srcFile.name, srcFile.path);
+  console.log(`Name: ${name} \n CID: ${cid}`);
+  //const value = await getDag(node, cid);
+  console.log(value);
 }
