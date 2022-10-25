@@ -1,0 +1,10 @@
+node_modules
+files
+*.txt
+*.jpg
+*.tar
+axiosFiles.js
+output.tar.gz
+dag.js
+text.js
+readme1.md
